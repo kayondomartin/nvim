@@ -48,6 +48,11 @@ local location = {
 	padding = 0,
 }
 
+local filename = {
+  "filename",
+  padding = 1,
+}
+
 -- cool function for progress
 local progress = function()
 	local current_line = vim.fn.line(".")
@@ -65,26 +70,26 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "powerline_dark",
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
+		theme = "solarized_dark",
+		component_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { branch, diagnostics },
-		lualine_b = { mode },
-		lualine_c = { 'flename' },
+		lualine_a = { mode },
+		lualine_b = { branch },
+		lualine_c = { filename, location },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },
 		lualine_y = { location },
 		lualine_z = { progress },
 	},
 	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = { "filename" },
-		lualine_x = { "location" },
+		lualine_a = { filename },
+		lualine_b = { location },
+		lualine_c = {},
+		lualine_x = {},
 		lualine_y = {},
 		lualine_z = {},
 	},
