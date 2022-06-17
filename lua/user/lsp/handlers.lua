@@ -78,6 +78,33 @@ M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
+  vim.lsp.protocol.CompletionItemKind = {
+    '?', -- Text
+    '?', -- Method
+    '?', -- Function
+    '?', -- Constructor
+    '?', -- Field
+    '?', -- Variable
+    '?', -- Class
+    '?', -- Interface
+    '?', -- Module
+    '?', -- Property
+    '?', -- Unit
+    '?', -- Value
+    '?', -- Enum
+    '?', -- Keyword
+    '?', -- Snippet
+    '?', -- Color
+    '?', -- File
+    '?', -- Reference
+    '?', -- Folder
+    '?', -- EnumMember
+    '?', -- Constant
+    '?', -- Struct
+    '?', -- Event
+    '?', -- Operator
+    '?', -- TypeParameter
+  }
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end
