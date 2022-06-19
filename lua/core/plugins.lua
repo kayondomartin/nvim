@@ -10,6 +10,7 @@ local astro_plugins = {
 
   -- Popup API
   ["nvim-lua/popup.nvim"] = {},
+  ["hoob3rt/lualine.nvim"] = {},
 
   -- Indent detection
   ["Darazaki/indent-o-matic"] = {
