@@ -3,7 +3,7 @@ if status_ok then
   neotree.setup(astronvim.user_plugin_opts("plugins.neo-tree", {
     close_if_last_window = true,
     popup_border_style = "rounded",
-    enable_diagnostics = false,
+    enable_diagnostics = true,
     default_component_configs = {
       indent = {
         padding = 0,
@@ -37,9 +37,9 @@ if status_ok then
     },
     filesystem = {
       filtered_items = {
-        visible = false,
+        visible = true,
         hide_dotfiles = true,
-        hide_gitignored = false,
+        hide_gitignored = true,
         hide_by_name = {
           ".DS_Store",
           "thumbs.db",
